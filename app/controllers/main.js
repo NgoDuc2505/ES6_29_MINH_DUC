@@ -58,18 +58,15 @@ function getInfo() {
 } document.querySelector('#btnThemNV').onclick = getInfo;
 
 function showInTable(list) {
-    // dom tới ele cần show list person
     let showEle = document.querySelector('#tableDanhSach');
     showEle.innerHTML = list.map((item) => {
         let { code, name, email, adress, type, ...rest } = item;
-        // xử lý những thông tin riêng thuộc đặc thù những kiểu đối tượng khác nhau (để lấy chúng in ra bảng: giảng viên in ra ngày làm, học sinh in ra điểm, KH in ra tên công ty, giá trị bill)
         let restArr = [];
         let charArr = distinguishChar(type).arr;
         let typeOfChar = distinguishChar(type).type;
         for (let i = 0; i < Object.keys(rest).length; i++) {
             restArr.push((`${charArr[i]}:${rest[Object.keys(rest)[i]]}`))
         }
-        // trả ra bảng 
         let restShow = restArr.map((restItem) => {
             return `<li>${restItem}</li>`
         }).join('');
@@ -92,7 +89,6 @@ function showInTable(list) {
 
 
 function distinguishChar(type) {
-    //!hàm phân biệt kiểu đối tượng và xác định sẵn những thuộc tính riêng của từng kiểu đối tượng
     switch (type) {
         case 'student':
             return {
@@ -115,7 +111,6 @@ function distinguishChar(type) {
     }
 
 }
-// ERROR: fuction value is never read --> window.[function]
 window.deleteObject = function (code) {
     manage.deletePerson(code)
     setLocalStorage()
@@ -217,12 +212,10 @@ function sortNameToggleBtn() {
     let asc = document.querySelector('.fa-arrow-up').classList;
     let dasc = document.querySelector('.fa-arrow-down').classList;
     if (dasc.contains('d-none')) {
-        //when arrow up
         asc.add('d-none');
         dasc.remove('d-none');
         return true;
     } else {
-        // when arrow down
         asc.remove('d-none');
         dasc.add('d-none');
         return false;
@@ -232,24 +225,20 @@ document.querySelector('.sortByName').addEventListener('click', sortByName);
 
 function sortByName() {
     let personArray = [];
-    //* nếu đã sort qua theo loại person thì nhận mảng của sort type trả về để sort name, ngược lại nếu không có mảng sort type trả về thì lấy mảng gốc.
     if (sortByType()) {
         personArray = sortByType();
     } else {
         personArray = [...manage.personArray];
     }
     let resultArr = [];
-    // lấy name của mỗi person, sau đó tách chỉ lấy tên không lấy họ và tên lót
     let nameArr = personArray.map((person, index) => {
         return person.name.split(' ').pop().toLowerCase();
     })
     let arrNameOrigin = [...nameArr]
     let sortedNameArr = [];
-    //kiểm tra điều kiện trạng thái của button theo chiều để sỏt a-z hay z-a
     if (sortNameToggleBtn()) {
         sortedNameArr = nameArr.sort();
     } else { sortedNameArr = nameArr.sort().reverse(); }
-    //*lấy mảng originName đối chiếu với mảng đã lọc ở bên trên, nếu trùng nhau trả về index để gán lại các person đã sort theo tên vào mảng resultArr
     for (let i = 0; i < nameArr.length; i++) {
         for (let j = 0; j < nameArr.length; j++) {
             if (arrNameOrigin[i] == sortedNameArr[j]) {
@@ -282,7 +271,6 @@ function sortByType() {
         }
     })
     showInTable(resultArray)
-    //~ Trả về cho sort name!
     return resultArray;
 }
 document.querySelector('#sortByType').addEventListener('change', sortByType);
@@ -301,7 +289,6 @@ function isValid(name, email, adress, type, ...rest) {
     let isValidRs = true;
     isValidRs &= vd.isEmpty(email, '#tbEmail') && vd.isEmail(email, '#tbEmail');
     isValidRs &= vd.isEmpty(adress, "#tbAdress");
-    // isValidRs &= vd.isEmpty(code, '#tbTKNV') && vd.isCodeRepeat(code, '#tbTKNV', codeArray);
     isValidRs &= vd.isEmpty(name, "#tbTen") && vd.isName(name, "#tbTen")
     let idForSpan = distinguishChar(type).idRender;
     switch (type) {

@@ -5,30 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quản lý nhân viên</title>
-
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 	<!-- Bootstrap 4 -->
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-
 	<!-- JQuery UI -->
 	<link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
-
-	<!-- Animate -->
-	<!-- <link rel="stylesheet" href="css/animate.css"> -->
-
-	<!-- My CSS -->
+	<!--CSS -->
 	<link rel="stylesheet" href="/assets/css/modal.css">
-
-	<link rel="stylesheet" href="/assets/css/style4.css">
-
+	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 
 <body>
 	<div class="wrapper">
-		<!-- Sidebar Holder -->
 		<nav id="sidebar">
 			<div class="sidebar-header">
 				<h3>Quản lý viện nghiên cứu</h3>
@@ -44,68 +34,16 @@
 				</li>
 				<li>
 					<a href="#">
-						<i class="fa fa-briefcase"></i>
-						Thông tin thêm
-					</a>
-					<a href="#pageSubmenu">
-						<i class="fa-regular fa-file-lines"></i>
-						Các trang
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="fa fa-link"></i>
-						Danh mục đầu tư
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="fa fa-paperclip"></i>
-						Câu hỏi thường gặp
-					</a>
-				</li>
-				<li>
-					<a href="#">
 						<i class="fa fa-paper-plane"></i>
 						Liên hệ
 					</a>
 				</li>
 			</ul>
-
-			<ul class="list-unstyled CTAs">
-				<li><a href="https://ribe.hcmuaf.edu.vn/ribe-1549-2/vn/san-pham-img-src--imagesnewgif-border--0.html" class="download">Sản phẩm kinh doanh</a>
-				</li>
-				<li><a href="https://ribe.hcmuaf.edu.vn/" class="article">Trang chủ</a></li>
-			</ul>
 		</nav>
 
-		<!-- Page Content Holder -->
 		<div id="content">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-
-					<div class="navbar-header">
-						<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-							<i class="glyphicon glyphicon-align-left"></i>
-							<span>Tùy chọn</span>
-						</button>
-					</div>
-
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-
-
 			<div class="container">
 				<div class="card text-center">
-					<!-- Header -->
 					<div class="card-header myCardHeader">
 						<div class="row">
 							<div class="col-md-6">
@@ -117,8 +55,6 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- Body -->
 					<div class="card-body">
 						<div class="row mb-3">
 							<div class="col-4">
@@ -130,14 +66,14 @@
 								</div>
 							</div>
 							<div class="col-4">
-								<div class="sortByName bg-info w-25">
+								<div class="sortByName bg-danger w-25">
 									<p class="text-white mb-0">Tên</p>
 									<i class="fa fa-arrow-up d-none" id="SapXepTang"></i>
 										<i class="fa fa-arrow-down " id="sapXepGiam"></i>
 								</div>
 							</div>
 							<div class="col-4">
-								<select name="sortByType" id="sortByType" class="bg-warning">
+								<select name="sortByType" id="sortByType" class="bg-info">
 									<option value="student">Học sinh</option>
 									<option value="teacher">Giảng viên</option>
 									<option value="customer">Khách hàng</option>
@@ -155,7 +91,7 @@
 									<th>Email</th>
 									<th>Địa chỉ</th>
 									
-									<th>Đặc tính</th>
+									<th>Thông tin</th>
 									<th><em class="fa fa-cog"></em></th>
 								</tr>
 							</thead>
@@ -164,8 +100,6 @@
 							</tbody>
 						</table>
 					</div>
-
-					<!-- Footer -->
 					<div class="card-footer myCardFooter">
 						<nav>
 							<ul class="pagination justify-content-center" id="ulPhanTrang">
@@ -180,7 +114,7 @@
 	</div>
 
 
-	<!-- The Modal -->
+	<!-- MODAL -->
 	<div class="modal fade" id="myModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -188,14 +122,6 @@
 				<header class="head-form mb-0">
 					<h2 id="header-title">Log In</h2>
 				</header>
-
-				<!-- Modal Header -->
-				<!-- 	<div class="modal-header">
-					<h4 class="modal-title" id="modal-title">Modal Heading</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div> -->
-
-				<!-- Modal body -->
 				<div class="modal-body">
 
 					<form role="form" id="myFormLogin">
@@ -262,7 +188,6 @@
 						<div class="renderInput"></div>
 					</form>
 				</div>
-
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
 					<button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
@@ -273,26 +198,15 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Bootstrap -->
+	<!-- BS -->
 	<script src="/app/services/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/app/services/js/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="/app/services/js/popper.min.js"></script>
 	<script type="text/javascript" src="/app/services/js/bootstrap.min.js"></script>
 
 	<!-- Date Picker -->
-	<!-- <script src="js/jquery-ui.min.js"></script> -->
 	<script src="/app/services/js/jquery-ui.js"></script>
 	<script src="/app/services/js/datepicker.js"></script>
-
-	<!-- Wow -->
-	<!-- <script src="js/wow.min.js"></script>	
-	<script>
-		new WOW().init();
-	</script>  -->
-
-	<!-- <script src="js/modal.js"></script> -->
-
 
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -301,7 +215,6 @@
 			});
 		});
 	</script>
-
 	<script type="module" src="../../app/models/person.js"></script>
 	<script src="../../app/models/renderInput.js"></script>
 	<script src="../../app/services/js/listPerson.js"></script>

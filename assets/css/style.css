@@ -49,7 +49,7 @@ i, span {
     display: inline-block;
 }
 body .card{
-    background-color: #F9F5EB;
+    background-color: #fff;
 }
 body .text-primary{
     color: #263159!important;
@@ -73,7 +73,7 @@ body .btn-primary:hover{
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #A9907E;
+    background: #6cb5b3;
     color: #fff;
     transition: all 0.3s;
 }
@@ -124,7 +124,7 @@ body .btn-primary:hover{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #A9907E;
+    background: #6cb5b3;
 }
 
 #sidebar .sidebar-header strong {
@@ -143,8 +143,8 @@ body .btn-primary:hover{
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #ABC4AA;
-    background: #fff;
+    color: #fff;
+    background: #35312b;
 }
 #sidebar ul li a i {
     margin-right: 10px;
@@ -152,7 +152,7 @@ body .btn-primary:hover{
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #675D50;
+    background: #35312b;
 }
 
 
